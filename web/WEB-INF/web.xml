@@ -6,23 +6,25 @@
 
     <servlet>
         <servlet-name>TableCtrlServlet</servlet-name>
-        <servlet-class>TableCtrlServlet</servlet-class>
+        <servlet-class>Servlets.TableCtrlServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>TableCtrlServlet</servlet-name>
         <url-pattern>/table</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>ParCtrlServlet</servlet-name>
-        <servlet-class>ParCtrlServlet</servlet-class>
+        <servlet-class>Servlets.ParCtrlServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ParCtrlServlet</servlet-name>
         <url-pattern>/person</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>SaveServlet</servlet-name>
-        <servlet-class>SaveServlet</servlet-class>
+        <servlet-class>Servlets.SaveServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SaveServlet</servlet-name>

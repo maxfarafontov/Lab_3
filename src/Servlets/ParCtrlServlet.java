@@ -1,3 +1,5 @@
+package Servlets;
+
 import javax.servlet.*;
 import java.sql.*;
 import java.util.*;
@@ -29,7 +31,7 @@ public class ParCtrlServlet extends GenericServlet {
         w.println("<BODY>");
         printEditButton(request.getParameter("id"),w);
         w.println("<table border=\"1\">");
-        w.println("<caption>Person</caption>");
+        w.println("<caption>Model.Person</caption>");
 
 
         Map<String, String> params = getFromDb(Integer.parseInt(request.getParameter("id")));
@@ -107,7 +109,7 @@ public class ParCtrlServlet extends GenericServlet {
         w.println("<input type=\"submit\" value=\"send\" id=\"save\"/>");
         w.println("<input type=\"hidden\" name=\"id\" value=" + id + ">");
         w.println("<table border=\"1\">");
-        w.println("<caption>Person</caption>");
+        w.println("<caption>Model.Person</caption>");
 
         Map<String, String> params = getFromDb(Integer.parseInt(request.getParameter("id")));
         int i=0;

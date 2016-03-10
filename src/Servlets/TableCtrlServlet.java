@@ -1,3 +1,7 @@
+package Servlets;
+
+import Model.Person;
+
 import javax.servlet.*;
 import java.sql.*;
 import java.util.*;

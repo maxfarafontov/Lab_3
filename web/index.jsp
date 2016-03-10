@@ -1,16 +1,20 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: makss56
-  Date: 10.03.2016
-  Time: 22:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <script src=js_validators.js></script>
   </head>
   <body>
+  <a href="/person">Model.Person</a><br>
+  <a href="/save">Save</a><br>
+  <a href="/table">Table</a><br>
   $END$
+
+
+  <div class="container"
+
   </body>
 </html>
