@@ -33,7 +33,6 @@ public class ParCtrlServlet extends GenericServlet {
         w.println("<table border=\"1\">");
         w.println("<caption>Model.Person</caption>");
 
-
         Map<String, String> params = getFromDb(Integer.parseInt(request.getParameter("id")));
         int i=0;
         for(String key:params.keySet()) {
@@ -60,17 +59,13 @@ public class ParCtrlServlet extends GenericServlet {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/db_first", "root", "19941124");
             Statement st = con.createStatement();
 
-
             ResultSet rs = st.executeQuery("select name,surname,number, series,birthday,score, book_id from person where id = " + id);
-
 
             Map<String, String> ps = new HashMap();
             while(rs.next()) {
                 for(int i=1;i<=rs.getMetaData().getColumnCount();i++) {
                     ps.put(rs.getMetaData().getColumnName(i),rs.getString(i));
                 }
-
-
             }
 
             rs.close();
