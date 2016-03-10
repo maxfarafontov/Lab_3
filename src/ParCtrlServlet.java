@@ -8,6 +8,7 @@ public class ParCtrlServlet extends GenericServlet {
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
         sendParamForm(request, response);
+        response.setContentType("text/html;charset=utf-8");
     }
 
     private void sendParamForm(ServletRequest request, ServletResponse response) throws ServletException, IOException {
@@ -54,7 +55,7 @@ public class ParCtrlServlet extends GenericServlet {
 
     private Map<String, String> getFromDb(int id) {
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/db_first", "root", "P@ssw0rd");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/db_first", "root", "19941124");
             Statement st = con.createStatement();
 
 

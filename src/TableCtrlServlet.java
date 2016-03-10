@@ -21,11 +21,10 @@ public class TableCtrlServlet extends GenericServlet {
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
         sendTableForm(request, response);
+        response.setContentType("text/html;charset=utf-8");
     }
 
-
     private void sendTableForm(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
-
         PrintWriter w = resp.getWriter();
         w.println("<HTML>");
         w.println("<HEAD>");
@@ -35,36 +34,32 @@ public class TableCtrlServlet extends GenericServlet {
         w.println("<BODY>");
         w.println("<table border=\"1\">");
         w.println("<caption>Table</caption>");
-
         w.println("<tr>");
         w.println("<th>Name</th>");
         w.println("<th>Surname</th>");
         w.println("</tr>");
+
         persons = getFromDb();
         for (Person p : persons) {
             printPerson(p, w);
         }
+
         w.println("</table>");
         w.println("</BODY>");
         w.println("</HTML>");
-
-
+        w.close();
     }
 
     private List<Person> getFromDb() {
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/db_first", "root", "P@ssw0rd");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/db_first", "root", "19941124");
             Statement st = con.createStatement();
-
 
             ResultSet rs = st.executeQuery("select id,name,surname from person;");
 
-
             List<Person> ps = new ArrayList();
             while(rs.next()) {
-
                 ps.add(new Person(Integer.parseInt(rs.getString(1)),rs.getString(2),rs.getString(3)));
-
             }
 
             rs.close();
@@ -78,6 +73,8 @@ public class TableCtrlServlet extends GenericServlet {
     }
 
     private void printPerson(Person p, PrintWriter w) {
-        w.println("<tr><td><a href=\"/person?edit=false&id=" + p.getId() + "\">" + p.getName() + "</a></td><td>" + p.getSurname() + "</td></tr>");
+        w.println("<tr><td><a href=\"/person?edit=false&id="
+                + p.getId() + "\">" + p.getName() + "</a></td><td>"
+                + p.getSurname() + "</td></tr>");
     }
 }
