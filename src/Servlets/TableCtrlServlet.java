@@ -45,7 +45,6 @@ public class TableCtrlServlet extends GenericServlet {
 
         pw.println("</HEAD>");
         pw.println("<BODY>");
-        pw.println("<a href=\"/edit\">Edit</a><br>");
         pw.println("<a href=\"/add\">Add</a><br>");
         pw.println("<table>");
         pw.println("<caption>Table</caption>");

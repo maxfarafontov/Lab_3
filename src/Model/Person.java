@@ -1,15 +1,13 @@
 package Model;
 
-import java.util.Date;
-
 public class Person {
 
     long id;
     String name; //имя
     String surname; // фамилия
-    int passportNumber; //номер
     int passportSeries; //серия
-    Date birthday; //др
+    int passportNumber; //номер
+    String birthday; //др
 
     public Person(int id, String name, String surname) {
         this.id = id;
@@ -17,25 +15,11 @@ public class Person {
         this.surname = surname;
     }
 
-    public int getPassportNumber() {
-        return passportNumber;
-    }
-    public void setPassportNumber(int passportNumber) {
-        this.passportNumber = passportNumber;
-    }
-
     public long getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getPassportSeries() {
-        return passportSeries;
-    }
-    public void setPassportSeries(int passportSeries) {
-        this.passportSeries = passportSeries;
     }
 
     public String getName() {
@@ -50,6 +34,20 @@ public class Person {
     }
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public int getPassportSeries() {
+        return passportSeries;
+    }
+    public void setPassportSeries(int passportSeries) {
+        this.passportSeries = passportSeries;
+    }
+
+    public int getPassportNumber() {
+        return passportNumber;
+    }
+    public void setPassportNumber(int passportNumber) {
+        this.passportNumber = passportNumber;
     }
 
 }
