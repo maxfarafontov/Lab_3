@@ -29,29 +29,41 @@ public class TableCtrlServlet extends GenericServlet {
     }
 
     private void sendTableForm(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
-        PrintWriter w = resp.getWriter();
-        w.println("<HTML>");
-        w.println("<HEAD>");
-        w.print("<script src=/script/js_validators.js></script>");
-        w.println("<TITLE>SQL Servlet</TITLE>");
-        w.println("</HEAD>");
-        w.println("<BODY>");
-        w.println("<table border=\"1\">");
-        w.println("<caption>Table</caption>");
-        w.println("<tr>");
-        w.println("<th>Name</th>");
-        w.println("<th>Surname</th>");
-        w.println("</tr>");
+        PrintWriter pw = resp.getWriter();
+        pw.println("<HTML>");
+        pw.println("<HEAD>");
+        pw.println("<script src=/script/js_validators.js></script>");
+        pw.println("<TITLE>SQL Servlet</TITLE>");
+
+        //global style
+        pw.println("<style type=\"text/css\">");
+        pw.println("table {border-collapse: separate;}");
+        pw.println("th {border: 1px solid grey;}");
+        pw.println("td {border: 1px solid grey;}");
+        pw.println("</style>");
+        //end
+
+        pw.println("</HEAD>");
+        pw.println("<BODY>");
+        pw.println("<a href=\"/edit\">Edit</a><br>");
+        pw.println("<a href=\"/add\">Add</a><br>");
+        pw.println("<table>");
+        pw.println("<caption>Table</caption>");
+        pw.println("<tr>");
+        pw.println("<th>ID</th>");
+        pw.println("<th>Name</th>");
+        pw.println("<th>Surname</th>");
+        pw.println("</tr>");
 
         persons = getFromDb();
         for (Person p : persons) {
-            printPerson(p, w);
+            printPerson(p, pw);
         }
 
-        w.println("</table>");
-        w.println("</BODY>");
-        w.println("</HTML>");
-        w.close();
+        pw.println("</table>");
+        pw.println("</BODY>");
+        pw.println("</HTML>");
+        pw.close();
     }
 
     private List<Person> getFromDb() {
@@ -76,9 +88,9 @@ public class TableCtrlServlet extends GenericServlet {
         return null;
     }
 
-    private void printPerson(Person p, PrintWriter w) {
-        w.println("<tr><td><a href=\"/person?edit=false&id="
-                + p.getId() + "\">" + p.getName() + "</a></td><td>"
-                + p.getSurname() + "</td></tr>");
+    private void printPerson(Person p, PrintWriter pw) {
+        pw.println("<tr><th><a href=/person?edit=false&id="
+                + p.getId() + ">" + p.getId() + "</a></th><th>" + p.getName() + "</th><th>"
+                + p.getSurname() + "</th></tr>");
     }
 }

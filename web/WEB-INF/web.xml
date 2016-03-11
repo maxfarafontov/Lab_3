@@ -4,13 +4,14 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
+
     <servlet>
         <servlet-name>TableCtrlServlet</servlet-name>
         <servlet-class>Servlets.TableCtrlServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>TableCtrlServlet</servlet-name>
-        <url-pattern>/table</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -38,6 +39,15 @@
     <servlet-mapping>
         <servlet-name>AddServlet</servlet-name>
         <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>Servlets.EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
     </servlet-mapping>
 
 </web-app>

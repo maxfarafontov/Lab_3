@@ -29,6 +29,7 @@ public class AddServlet extends GenericServlet {
 
         pw.println("<HTML>");
         pw.println("<HEAD>");
+        pw.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"first.css\">");
         pw.println("<TITLE>Добавить данные</TITLE>");
         pw.println("</HEAD>");
         pw.println("<BODY>");
